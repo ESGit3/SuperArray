@@ -14,6 +14,7 @@ public class SuperArray {
             temp[pos] = i;
             pos++;
         }
+        data = temp;
     }
 
     public int size() {
@@ -21,7 +22,9 @@ public class SuperArray {
     }
 
     public boolean add(String element) {
-        if (size >= data.length) return false;
+        if (size >= data.length) {
+            this.resize();
+        }
         data[size] = element;
         size++;
         return true;

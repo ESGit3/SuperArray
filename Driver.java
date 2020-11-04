@@ -16,5 +16,17 @@ public class Driver {
         System.out.println(a.get(9));
         System.out.println(a.set(9, "asdf"));
         System.out.println(a.get(9));
+
+        a.add("k");
+        System.out.println(a.size());
+        System.out.println(a.get(10));
+
+        SuperArray words = new SuperArray();
+        words.add("kani");
+        words.add("uni");
+        words.add("ebi");
+        for(int i = 0; i < words.size(); i++){
+            System.out.println( words.get(i) );
+        }
     }
 }
