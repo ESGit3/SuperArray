@@ -7,6 +7,15 @@ public class SuperArray {
         size = 0;
     }
 
+    public void resize() {
+        String[] temp = new String[data.length + 1];
+        int pos = 0;
+        for (String i : data) {
+            temp[pos] = i;
+            pos++;
+        }
+    }
+
     public int size() {
         return size;
     }
