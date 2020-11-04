@@ -7,7 +7,12 @@ public class SuperArray {
         size = 0;
     }
 
-    public void resize() {
+    public SuperArray(int initialCapacity) {
+        data = new String[initialCapacity];
+        size = 0;
+    }
+
+    private void resize() {
         String[] temp = new String[data.length + 1];
         int pos = 0;
         for (String i : data) {
@@ -38,5 +43,44 @@ public class SuperArray {
         String old = data[index];
         data[index] = element;
         return old;
+    }
+
+    public boolean isEmpty() {
+        return (this.size == 0);
+    }
+
+    public void clear() {
+        this.size = 0;
+        this.data = new String[10];
+    }
+
+    public String toString() {
+        String temp = "[";
+        for (int i = 0; i < this.size; i++) {
+            temp += this.data[i] + ", ";
+        }
+        temp = temp.substring(0, temp.length() - 2);
+        temp += "]";
+
+        return temp;
+    }
+
+    public boolean contains(String s) {
+        for (int i = 0; i < this.size; i++) {
+            if ((this.data)[i].equals(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void add(int index, String element) {
+        if (this.size + 1 > this.data.length) {
+            this.resize();
+        }
+        for (int i = this.size - 1; i > index; i--) {
+            (this.data)[i + 1] = (this.data)[i];
+        }
+        (this.data)[index] = element;
     }
 }
