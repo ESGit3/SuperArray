@@ -101,4 +101,8 @@ public class SuperArray {
         }
         return -1;
     }
+
+    public String[] toArray() {
+        return this.data;
+    }
 }
