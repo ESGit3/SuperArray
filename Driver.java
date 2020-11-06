@@ -9,6 +9,18 @@ public class Driver {
         }
     }
 
+    public static SuperArray findOverlap(SuperArray a, SuperArray b) {
+        SuperArray temp = new SuperArray();
+        for (int i = 0; i < a.size(); i++) {
+            if (b.contains(a.get(i))) {
+                temp.add(a.get(i));
+            }
+        }
+        removeDuplicates(temp);
+        return temp;
+    }
+
+
     public static void main(String[] args) {
         SuperArray a = new SuperArray();
 
@@ -52,5 +64,10 @@ public class Driver {
         removeDuplicates(words);
         System.out.println(words);
 
+        SuperArray test1 = new SuperArray();
+        SuperArray test2 = new SuperArray();
+        test1.add("9");     test1.add("1");     test1.add("2");     test1.add("2");     test1.add("3");     test1.add("4");
+        test2.add("0");     test2.add("4");     test2.add("2");     test2.add("2");     test2.add("9");
+        System.out.println(findOverlap( test1, test2 ));
     }
 }
