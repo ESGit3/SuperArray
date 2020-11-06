@@ -92,4 +92,13 @@ public class SuperArray {
             this.size -= 1;
         }
     }
+
+    public int indexOf(String s) {
+        for (int i = 0; i < this.size; i++) {
+            if (this.data[i].equals(s)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

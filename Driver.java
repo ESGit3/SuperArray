@@ -46,5 +46,7 @@ public class Driver {
         a.remove(5);
         System.out.println(a.toString());
         System.out.println(a.size());
+
+        System.out.println(a.indexOf("dd"));
     }
 }
