@@ -41,5 +41,10 @@ public class Driver {
 
         a.add(5, "qwerty");
         System.out.println(a.toString());
+        System.out.println(a.size());
+
+        a.remove(5);
+        System.out.println(a.toString());
+        System.out.println(a.size());
     }
 }

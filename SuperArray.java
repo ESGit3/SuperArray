@@ -75,12 +75,21 @@ public class SuperArray {
     }
 
     public void add(int index, String element) {
-        if (this.size + 1 > this.data.length) {
-            this.resize();
-        }
-        for (int i = this.size - 1; i > index; i--) {
-            (this.data)[i + 1] = (this.data)[i];
+        this.resize();
+        for (int i = this.size; i > index - 1; i--) {
+            (this.data)[i] = (this.data)[i - 1];
         }
         (this.data)[index] = element;
+        this.size += 1;
+    }
+
+    public void remove(int index) {
+        if (this.size != 0) {
+            for (int i = index; i < this.size - 1; i++) {
+                (this.data)[i] = (this.data)[i + 1];
+            }
+            this.data[this.size - 1] = null;
+            this.size -= 1;
+        }
     }
 }
