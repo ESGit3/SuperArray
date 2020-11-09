@@ -73,5 +73,13 @@ public class Driver {
         System.out.println(findOverlap( test1, test2 ));
 
         System.out.println(test1.lastIndexOf("2"));
+
+        SuperArray equals1 = new SuperArray();
+        SuperArray equals2 = new SuperArray();
+
+        equals1.add("0");     equals1.add("4");     equals1.add("2");     equals1.add("2");     equals1.add("9");
+        equals2.add("0");     equals2.add("4");     equals2.add("2");     equals2.add("2");     equals2.add("9");
+
+        System.out.println(equals1.equals(equals2));
     }
 }

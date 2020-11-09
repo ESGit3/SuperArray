@@ -114,4 +114,18 @@ public class SuperArray {
         }
         return -1;
     }
+
+    public boolean equals(SuperArray other) {
+        if (this.size == other.size()) {
+            for (int i = 0; i < this.size; i++) {
+                if (this.data[i] == other.data[i]) {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
 }
