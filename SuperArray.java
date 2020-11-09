@@ -105,4 +105,13 @@ public class SuperArray {
     public String[] toArray() {
         return this.data;
     }
+
+    public int lastIndexOf(String s) {
+        for (int i = this.size - 1; i >= 0; i--) {
+            if (this.data[i].equals(s)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
