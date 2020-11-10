@@ -106,5 +106,7 @@ public class Driver {
         System.out.println(equals1.equals(equals2));
 
         System.out.println(zip(test1, test2));
+
+        SuperArray error1 = new SuperArray(-3);
     }
 }
