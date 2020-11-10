@@ -76,7 +76,7 @@ public class SuperArray {
 
     public void add(int index, String element) {
         this.resize();
-        for (int i = this.size; i > index - 1; i--) {
+        for (int i = this.size; i > index; i--) {
             (this.data)[i] = (this.data)[i - 1];
         }
         (this.data)[index] = element;
@@ -103,7 +103,11 @@ public class SuperArray {
     }
 
     public String[] toArray() {
-        return this.data;
+        String[] temp = new String[this.size];
+        for (int i = 0; i < this.size; i++) {
+            temp[i] = this.data[i];
+        }
+        return temp;
     }
 
     public int lastIndexOf(String s) {

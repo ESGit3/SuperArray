@@ -20,7 +20,30 @@ public class Driver {
         return temp;
     }
 
+    public static SuperArray zip(SuperArray a, SuperArray b) {
+        String[] data1 = a.toArray();
+        String[] data2 = b.toArray();
+        SuperArray result = new SuperArray();
 
+        int shorter = data1.length < data2.length ? data1.length : data2.length;
+        for (int i = 0; i < shorter; i++) {
+            result.add(data1[i]);
+            result.add(data2[i]);
+        }
+
+        if (data1.length < data2.length) {
+            for (int i = shorter; i < data2.length; i++) {
+                result.add(data2[i]);
+            }
+        } else if (data1.length > data2.length) {
+            for (int i = shorter; i < data1.length; i++) {
+                result.add(data1[i]);
+            }
+        }
+
+        System.out.println(result.size());
+        return result;
+    }
 
 
     public static void main(String[] args) {
@@ -81,5 +104,7 @@ public class Driver {
         equals2.add("0");     equals2.add("4");     equals2.add("2");     equals2.add("2");     equals2.add("9");
 
         System.out.println(equals1.equals(equals2));
+
+        System.out.println(zip(test1, test2));
     }
 }
