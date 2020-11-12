@@ -120,6 +120,11 @@ public class Driver {
             e.printStackTrace();
         }
 
+        try {
+            System.out.println(equals1.set(-4, "test"));
+        } catch (IndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
 
     }
 }
