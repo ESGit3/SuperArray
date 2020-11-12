@@ -126,5 +126,16 @@ public class Driver {
             e.printStackTrace();
         }
 
+        try {
+            equals1.add(-4, "test");
+        } catch (IndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            equals1.remove(40);
+        } catch (IndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
     }
 }

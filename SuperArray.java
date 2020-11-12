@@ -84,7 +84,7 @@ public class SuperArray {
     }
 
     public void add(int index, String element) {
-        if (index < 0 || index >= this.size) {
+        if (index < 0 || index > this.size) {
             throw new IndexOutOfBoundsException("Index is out of range");
         }
         this.resize();
