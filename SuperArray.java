@@ -39,6 +39,9 @@ public class SuperArray {
     }
 
     public String get(int index) {
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsException("Index is out of range");
+        }
         return (data[index]);
     }
 
